@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THRE3 × Enfusión | Ihr Markteintritt in Spanien & DACH</title>
-<meta name="description" content="Zwei Agenturen, 30 Jahre Erfahrung. Ihr strategischer Markteintritt in Spanien, Portugal und LATAM — oder in den DACH-Raum.">
+<title>THRE3 × Enfusión | Cross-Border B2B Marketing</title>
+<meta name="description" content="Zwei Agenturen, 30 Jahre Erfahrung. Ihr strategischer Markteintritt in Spanien oder den DACH-Raum.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,34 +20,43 @@ section{padding:var(--sp) 0}
 .ss{font-size:17px;color:var(--g600);max-width:600px;line-height:1.7}
 
 /* NAV */
-.nav{position:fixed;top:-80px;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--g200);transition:top .4s}
+.nav{position:fixed;top:-80px;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--g200);transition:top .4s}
 .nav.v{top:0}
-.nav-i{max-width:var(--mw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-l{font-family:var(--ft);font-weight:700;font-size:15px}
+.nav-i{max-width:var(--mw);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.nav-l{font-family:var(--ft);font-weight:700;font-size:15px;white-space:nowrap}
 .nav-l span{color:var(--g400);font-weight:400}
-.nav-c{background:var(--purple);color:var(--wht);padding:10px 24px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang-sw{display:flex;gap:3px}
+.lang-btn{background:transparent;color:var(--g600);border:1px solid var(--g200);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer;transition:all .2s;font-family:var(--ft);font-weight:600}
+.lang-btn.active{color:var(--purple);border-color:var(--purple);background:var(--purple-lt)}
+.lang-btn:hover:not(.active){color:var(--green);border-color:var(--green)}
+.nav-c{background:var(--purple);color:var(--wht);padding:10px 20px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:background .2s;white-space:nowrap}
 .nav-c:hover{background:var(--purple-dk)}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;background:var(--blk);color:var(--wht);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(86,206,164,.15),transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(87,34,168,.12),transparent 70%);pointer-events:none}
-.hero-c{position:relative;z-index:1;padding:120px 0 100px}
-.hero-b{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:8px 20px;font-size:13px;color:var(--green);margin-bottom:32px;font-weight:500}
+/* HERO — split city photo */
+.hero{min-height:100vh;display:flex;align-items:center;color:var(--wht);position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr}
+.hero-bg-l{background:url('https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=960&q=80&fit=crop&auto=format') center/cover no-repeat;position:relative}
+.hero-bg-r{background:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=960&q=80&fit=crop&auto=format') center/cover no-repeat;position:relative}
+.hero-bg-l::after{content:'';position:absolute;inset:0;background:rgba(4,32,20,.74)}
+.hero-bg-r::after{content:'';position:absolute;inset:0;background:rgba(22,6,52,.74)}
+.hero-divider{position:absolute;left:50%;top:8%;width:2px;height:84%;background:linear-gradient(to bottom,transparent,rgba(86,206,164,.7) 30%,rgba(86,206,164,.5) 70%,transparent);transform:translateX(-50%);z-index:1}
+.hero-c{position:relative;z-index:2;padding:120px 0 100px}
+.hero-b{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:8px 20px;font-size:13px;color:var(--green);margin-bottom:32px;font-weight:500}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-family:var(--ft);font-size:clamp(38px,5.5vw,64px);font-weight:700;line-height:1.1;margin-bottom:24px;max-width:720px;letter-spacing:-.02em}
+.hero h1{font-family:var(--ft);font-size:clamp(36px,5vw,62px);font-weight:700;line-height:1.1;margin-bottom:24px;max-width:720px;letter-spacing:-.02em;text-shadow:0 2px 20px rgba(0,0,0,.4)}
 .hero h1 em{font-style:normal;color:var(--green)}
-.hero-s{font-size:18px;line-height:1.7;color:rgba(255,255,255,.7);max-width:560px;margin-bottom:40px}
+.hero-s{font-size:18px;line-height:1.7;color:rgba(255,255,255,.8);max-width:560px;margin-bottom:40px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .hero-a{display:flex;flex-wrap:wrap;gap:16px}
-.bp{display:inline-flex;align-items:center;background:var(--green);color:var(--blk);padding:16px 32px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all .2s}
+.bp{display:inline-flex;align-items:center;background:var(--green);color:var(--blk);padding:16px 32px;border-radius:10px;font-size:16px;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
 .bp:hover{background:var(--green-dk);color:var(--wht);transform:translateY(-1px)}
-.bs2{display:inline-flex;align-items:center;background:transparent;color:var(--wht);border:1px solid rgba(255,255,255,.25);padding:16px 32px;border-radius:10px;font-size:16px;text-decoration:none;transition:all .2s}
+.bs2{display:inline-flex;align-items:center;background:rgba(255,255,255,.12);color:var(--wht);border:1px solid rgba(255,255,255,.3);padding:16px 32px;border-radius:10px;font-size:16px;text-decoration:none;transition:all .2s;backdrop-filter:blur(4px)}
 .bs2:hover{border-color:var(--green);color:var(--green)}
-.hero-lg{display:flex;align-items:center;gap:24px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1)}
+.hero-lg{display:flex;align-items:center;gap:24px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,.15)}
 .hero-lg .ag{font-family:var(--ft);font-weight:700;font-size:20px}
 .hero-lg .x{color:var(--green);font-size:18px}
-.hero-lg .lc{font-size:13px;color:rgba(255,255,255,.4);margin-top:2px}
+.hero-lg .lc{font-size:13px;color:rgba(255,255,255,.45);margin-top:2px}
 
 /* PAIN */
 .pain{background:var(--g50)}
@@ -171,6 +180,9 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 /* RESPONSIVE */
 @media(max-width:768px){
   :root{--sp:64px}
+  .hero-bg{grid-template-columns:1fr}
+  .hero-bg-r{display:none}
+  .hero-divider{display:none}
   .sg,.fds,.fw,.fr{grid-template-columns:1fr}
   .ps{grid-template-columns:1fr}
   .stp{border-radius:8px!important}
@@ -180,6 +192,7 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
   .fgr{grid-template-columns:1fr}
   .fbt{flex-direction:column;gap:12px;text-align:center}
   .hero-lg{flex-direction:column;align-items:flex-start;gap:16px}
+  .nav-right{gap:8px}
 }
 </style>
 </head>
@@ -189,24 +202,36 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <nav class="nav" id="sn">
   <div class="nav-i">
     <div class="nav-l">THRE3 <span>&times;</span> Enfusión</div>
-    <a href="#kontakt" class="nav-c">Erstgespräch vereinbaren</a>
+    <div class="nav-right">
+      <div class="lang-sw">
+        <button class="lang-btn active" data-lang="de" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#kontakt" class="nav-c" data-i18n="nav.cta">Erstgespräch vereinbaren</a>
+    </div>
   </div>
 </nav>
 
 <!-- 01 HERO -->
 <section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-l"></div>
+    <div class="hero-bg-r"></div>
+  </div>
+  <div class="hero-divider"></div>
   <div class="ctr hero-c">
-    <div class="hero-b"><span class="dot"></span>Cross-Border B2B Marketing</div>
-    <h1>Ihr Markt wartet.<br>Wir bringen <em>Sie hin.</em></h1>
-    <p class="hero-s">Zwei Agenturen. 30 Jahre Erfahrung. Ein System für Ihren Markteintritt in Spanien, Portugal und LATAM — oder in den DACH-Raum. Keine Experimente, sondern eine bewährte Brücke.</p>
+    <div class="hero-b"><span class="dot"></span><span data-i18n="hero.badge">Cross-Border B2B Marketing</span></div>
+    <h1 data-i18n-html="hero.h1">Ihr Markt wartet.<br>Wir bringen <em>Sie hin.</em></h1>
+    <p class="hero-s" data-i18n="hero.sub">Zwei Agenturen. 30 Jahre Erfahrung. Ein System für Ihren Markteintritt in Spanien, Portugal und LATAM — oder in den DACH-Raum. Keine Experimente, sondern eine bewährte Brücke.</p>
     <div class="hero-a">
-      <a href="#kontakt" class="bp">Kostenloses Erstgespräch &rarr;</a>
-      <a href="#prozess" class="bs2">So funktioniert es</a>
+      <a href="#kontakt" class="bp" data-i18n="hero.cta1">Kostenloses Erstgespräch →</a>
+      <a href="#prozess" class="bs2" data-i18n="hero.cta2">So funktioniert es</a>
     </div>
     <div class="hero-lg">
-      <div><div class="ag">THRE3</div><div class="lc">Berlin, Deutschland</div></div>
+      <div><div class="ag">THRE3</div><div class="lc" data-i18n="hero.loc1">Berlin, Deutschland</div></div>
       <span class="x">&times;</span>
-      <div><div class="ag">Enfusión</div><div class="lc">Barcelona, Spanien</div></div>
+      <div><div class="ag">Enfusión</div><div class="lc" data-i18n="hero.loc2">Barcelona, Spanien</div></div>
     </div>
   </div>
 </section>
@@ -214,25 +239,13 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <!-- 02 PAIN POINTS -->
 <section class="pain">
   <div class="ctr">
-    <div class="sl">Das Problem</div>
-    <h2 class="st">Kennen Sie das?</h2>
-    <p class="ss">Internationaler Markteintritt klingt einfach. Die Realität sieht anders aus.</p>
+    <div class="sl" data-i18n="pain.sl">Das Problem</div>
+    <h2 class="st" data-i18n="pain.st">Kennen Sie das?</h2>
+    <p class="ss" data-i18n="pain.ss">Internationaler Markteintritt klingt einfach. Die Realität sieht anders aus.</p>
     <div class="pg">
-      <div class="pc">
-        <div class="pi">&#127760;</div>
-        <h3>Sie übersetzen Ihre Website — aber niemand findet Sie</h3>
-        <p>Eine übersetzte Website ist kein SEO. Lokale Suchbegriffe, kulturelle Nuancen und landesspezifische Plattformen entscheiden, ob Sie gefunden werden oder unsichtbar bleiben.</p>
-      </div>
-      <div class="pc">
-        <div class="pi">&#128200;</div>
-        <h3>Ihre Leads im Zielmarkt konvertieren nicht</h3>
-        <p>Was in Deutschland funktioniert, funktioniert nicht automatisch in Spanien — und umgekehrt. Tonalität, Verhandlungskultur und Entscheidungsprozesse unterscheiden sich fundamental.</p>
-      </div>
-      <div class="pc">
-        <div class="pi">&#129309;</div>
-        <h3>Sie brauchen lokale Expertise, nicht noch eine Agentur</h3>
-        <p>Freiberufler ohne Struktur? Große Agentur ohne persönlichen Kontakt? Sie brauchen einen Partner, der den Markt kennt, Ihre Sprache spricht und Ihr Geschäft versteht.</p>
-      </div>
+      <div class="pc"><div class="pi">&#127760;</div><h3 data-i18n="p1.h3">Sie übersetzen Ihre Website — aber niemand findet Sie</h3><p data-i18n="p1.p">Eine übersetzte Website ist kein SEO. Lokale Suchbegriffe, kulturelle Nuancen und landesspezifische Plattformen entscheiden, ob Sie gefunden werden oder unsichtbar bleiben.</p></div>
+      <div class="pc"><div class="pi">&#128200;</div><h3 data-i18n="p2.h3">Ihre Leads im Zielmarkt konvertieren nicht</h3><p data-i18n="p2.p">Was in Deutschland funktioniert, funktioniert nicht automatisch in Spanien — und umgekehrt. Tonalität, Verhandlungskultur und Entscheidungsprozesse unterscheiden sich fundamental.</p></div>
+      <div class="pc"><div class="pi">&#129309;</div><h3 data-i18n="p3.h3">Sie brauchen lokale Expertise, nicht noch eine Agentur</h3><p data-i18n="p3.p">Freiberufler ohne Struktur? Große Agentur ohne persönlichen Kontakt? Sie brauchen einen Partner, der den Markt kennt, Ihre Sprache spricht und Ihr Geschäft versteht.</p></div>
     </div>
   </div>
 </section>
@@ -240,34 +253,34 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <!-- 03 SOLUTION -->
 <section id="loesung">
   <div class="ctr">
-    <div class="sl">Die Lösung</div>
-    <h2 class="st">Ein System, zwei Märkte</h2>
-    <p class="ss">Kein Subcontracting, sondern echte Partnerschaft. Ein Ansprechpartner, der Ihre Sprache spricht.</p>
+    <div class="sl" data-i18n="sol.sl">Die Lösung</div>
+    <h2 class="st" data-i18n="sol.st">Ein System, zwei Märkte</h2>
+    <p class="ss" data-i18n="sol.ss">Kein Subcontracting, sondern echte Partnerschaft. Ein Ansprechpartner, der Ihre Sprache spricht.</p>
     <div class="sg">
       <div class="sc de">
-        <div class="dl">Deutschland &rarr; Spanien</div>
-        <h3>Sie wollen in den spanischen Markt?</h3>
-        <p>THRE3 führt Ihre Kundenbeziehung. Enfusión liefert alles vor Ort.</p>
+        <div class="dl" data-i18n="de.dir">Deutschland → Spanien</div>
+        <h3 data-i18n="de.h3">Sie wollen in den spanischen Markt?</h3>
+        <p data-i18n="de.p">THRE3 führt Ihre Kundenbeziehung. Enfusión liefert alles vor Ort.</p>
         <ul>
-          <li><span class="ck">&#10003;</span>SEO &amp; AEO für den spanischen Markt</li>
-          <li><span class="ck">&#10003;</span>Google Ads auf Spanisch, lokal optimiert</li>
-          <li><span class="ck">&#10003;</span>LinkedIn Outreach mit lokalen Profilen</li>
-          <li><span class="ck">&#10003;</span>Cold Emailing B2B auf Spanisch</li>
-          <li><span class="ck">&#10003;</span>Landing Page lokalisiert</li>
-          <li><span class="ck">&#10003;</span>HubSpot Dual-Market Setup</li>
+          <li><span class="ck">&#10003;</span><span data-i18n="de.l1">SEO &amp; AEO für den spanischen Markt</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="de.l2">Google Ads auf Spanisch, lokal optimiert</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="de.l3">LinkedIn Outreach mit lokalen Profilen</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="de.l4">Cold Emailing B2B auf Spanisch</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="de.l5">Landing Page lokalisiert</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="de.l6">HubSpot Dual-Market Setup</span></li>
         </ul>
       </div>
       <div class="sc es">
-        <div class="dl">Spanien &rarr; Deutschland</div>
-        <h3>¿Quiere entrar en el mercado alemán?</h3>
-        <p>Enfusión lleva la relación. THRE3 ejecuta todo en Alemania.</p>
+        <div class="dl" data-i18n="es.dir">Spanien → Deutschland</div>
+        <h3 data-i18n="es.h3">¿Quiere entrar en el mercado alemán?</h3>
+        <p data-i18n="es.p">Enfusión lleva la relación. THRE3 ejecuta todo en Alemania.</p>
         <ul>
-          <li><span class="ck">&#10003;</span>SEO &amp; SEA für den DACH-Raum</li>
-          <li><span class="ck">&#10003;</span>Google Ads auf Deutsch, lokal optimiert</li>
-          <li><span class="ck">&#10003;</span>LinkedIn Outreach im DACH-Netzwerk</li>
-          <li><span class="ck">&#10003;</span>Content-Strategie auf Deutsch</li>
-          <li><span class="ck">&#10003;</span>Landing Page kulturell adaptiert</li>
-          <li><span class="ck">&#10003;</span>HubSpot deutsches Pipeline-Setup</li>
+          <li><span class="ck">&#10003;</span><span data-i18n="es.l1">SEO &amp; SEA für den DACH-Raum</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="es.l2">Google Ads auf Deutsch, lokal optimiert</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="es.l3">LinkedIn Outreach im DACH-Netzwerk</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="es.l4">Content-Strategie auf Deutsch</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="es.l5">Landing Page kulturell adaptiert</span></li>
+          <li><span class="ck">&#10003;</span><span data-i18n="es.l6">HubSpot deutsches Pipeline-Setup</span></li>
         </ul>
       </div>
     </div>
@@ -277,13 +290,13 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <!-- 04 PROCESS -->
 <section class="proc" id="prozess">
   <div class="ctr">
-    <div class="sl">Der Prozess</div>
-    <h2 class="st">So funktioniert der Markteintritt</h2>
-    <p class="ss">Ein strukturiertes 6-Monats-Programm mit klaren Phasen, messbaren Ergebnissen und einer ehrlichen Bewertung.</p>
+    <div class="sl" data-i18n="proc.sl">Der Prozess</div>
+    <h2 class="st" data-i18n="proc.st">So funktioniert der Markteintritt</h2>
+    <p class="ss" data-i18n="proc.ss">Ein strukturiertes 6-Monats-Programm mit klaren Phasen und messbaren Ergebnissen.</p>
     <div class="ps">
-      <div class="stp"><div class="sn">01</div><div class="slb">Monat 1–2</div><h3>Strategie &amp; Setup</h3><p>Marktanalyse, kulturelles Buyer-Persona-Mapping, Website-Lokalisierung, HubSpot bi-nationales Setup, Kampagnen-Vorbereitung.</p></div>
-      <div class="stp"><div class="sn">02</div><div class="slb">Monat 3–5</div><h3>Aktivierung</h3><p>Google Ads im Zielmarkt live, SEO/AEO-Aufbau, LinkedIn Outreach mit lokalen Profilen, Cold Emailing B2B, erste Leads.</p></div>
-      <div class="stp"><div class="sn">03</div><div class="slb">Monat 6</div><h3>Bewertung</h3><p>Was funktioniert? Welche Kanäle lohnen sich? Erneuerung, Anpassung oder strukturiertes Handover an Ihr Team.</p></div>
+      <div class="stp"><div class="sn">01</div><div class="slb" data-i18n="pr1.slb">Monat 1–2</div><h3 data-i18n="pr1.h3">Strategie &amp; Setup</h3><p data-i18n="pr1.p">Marktanalyse, kulturelles Buyer-Persona-Mapping, Website-Lokalisierung, HubSpot bi-nationales Setup.</p></div>
+      <div class="stp"><div class="sn">02</div><div class="slb" data-i18n="pr2.slb">Monat 3–5</div><h3 data-i18n="pr2.h3">Aktivierung</h3><p data-i18n="pr2.p">Google Ads im Zielmarkt live, SEO/AEO-Aufbau, LinkedIn Outreach, Cold Emailing, erste Leads.</p></div>
+      <div class="stp"><div class="sn">03</div><div class="slb" data-i18n="pr3.slb">Monat 6</div><h3 data-i18n="pr3.h3">Bewertung</h3><p data-i18n="pr3.p">Was funktioniert? Welche Kanäle lohnen sich? Erneuerung, Anpassung oder Handover an Ihr Team.</p></div>
     </div>
   </div>
 </section>
@@ -291,18 +304,18 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <!-- 05 SERVICES -->
 <section id="leistungen">
   <div class="ctr">
-    <div class="sl">Leistungen</div>
-    <h2 class="st">Was Sie bekommen</h2>
-    <p class="ss">Alle Leistungen, die Ihr Markteintritt braucht. Geliefert von der Agentur mit der lokalen Expertise.</p>
+    <div class="sl" data-i18n="svc.sl">Leistungen</div>
+    <h2 class="st" data-i18n="svc.st">Was Sie bekommen</h2>
+    <p class="ss" data-i18n="svc.ss">Alle Leistungen, die Ihr Markteintritt braucht.</p>
     <div class="svg2">
-      <div class="si"><h4>SEO / AEO / GEO</h4><p>Sichtbarkeit in Suchmaschinen und KI-Antwortmaschinen im Zielmarkt.</p><span class="tg te">Enfusión</span></div>
-      <div class="si"><h4>Google &amp; Meta Ads</h4><p>Kampagnen lokal optimiert, mit lokalem Verständnis für Keywords und Kultur.</p><span class="tg tb">Beide Agenturen</span></div>
-      <div class="si"><h4>LinkedIn Outreach</h4><p>Prospecting mit lokalen Profilen, Sales Navigator, personalisierte Sequenzen.</p><span class="tg tb">Beide Agenturen</span></div>
-      <div class="si"><h4>Cold Emailing B2B</h4><p>Infrastruktur, Listenerstellung, Sequenzen und Deliverability-Monitoring.</p><span class="tg te">Enfusión</span></div>
-      <div class="si"><h4>Landing Pages</h4><p>Nicht übersetzt, sondern kulturell adaptiert. Mobile-First, CRO-optimiert.</p><span class="tg t3">THRE3dev</span></div>
-      <div class="si"><h4>HubSpot Dual-Market</h4><p>Ein CRM, zwei Pipelines, zwei Sprachen. Vollständige Transparenz.</p><span class="tg tb">Beide Agenturen</span></div>
-      <div class="si"><h4>Content-Strategie</h4><p>Blog, Social Media, Thought Leadership — in der Sprache des Zielmarkts.</p><span class="tg te">Enfusión</span></div>
-      <div class="si"><h4>KI-Sichtbarkeitsanalyse</h4><p>Monatlicher AI Visibility Score: Erscheint Ihr Unternehmen in ChatGPT und Perplexity?</p><span class="tg tb">Beide Agenturen</span></div>
+      <div class="si"><h4 data-i18n="s1.h4">SEO / AEO / GEO</h4><p data-i18n="s1.p">Sichtbarkeit in Suchmaschinen und KI-Antwortmaschinen im Zielmarkt.</p><span class="tg te">Enfusión</span></div>
+      <div class="si"><h4 data-i18n="s2.h4">Google &amp; Meta Ads</h4><p data-i18n="s2.p">Kampagnen lokal optimiert, mit lokalem Verständnis für Keywords.</p><span class="tg tb" data-i18n="tag.both">Beide Agenturen</span></div>
+      <div class="si"><h4 data-i18n="s3.h4">LinkedIn Outreach</h4><p data-i18n="s3.p">Prospecting mit lokalen Profilen und Sales Navigator.</p><span class="tg tb" data-i18n="tag.both">Beide Agenturen</span></div>
+      <div class="si"><h4 data-i18n="s4.h4">Cold Emailing B2B</h4><p data-i18n="s4.p">Infrastruktur, Listenerstellung und Deliverability-Monitoring.</p><span class="tg te">Enfusión</span></div>
+      <div class="si"><h4 data-i18n="s5.h4">Landing Pages</h4><p data-i18n="s5.p">Nicht übersetzt, sondern kulturell adaptiert. CRO-optimiert.</p><span class="tg t3">THRE3dev</span></div>
+      <div class="si"><h4 data-i18n="s6.h4">HubSpot Dual-Market</h4><p data-i18n="s6.p">Ein CRM, zwei Pipelines, zwei Sprachen.</p><span class="tg tb" data-i18n="tag.both">Beide Agenturen</span></div>
+      <div class="si"><h4 data-i18n="s7.h4">Content-Strategie</h4><p data-i18n="s7.p">Blog, Social, Thought Leadership in der Sprache des Zielmarkts.</p><span class="tg te">Enfusión</span></div>
+      <div class="si"><h4 data-i18n="s8.h4">KI-Sichtbarkeitsanalyse</h4><p data-i18n="s8.p">AI Visibility Score: ChatGPT, Perplexity, Google AI.</p><span class="tg tb" data-i18n="tag.both">Beide Agenturen</span></div>
     </div>
   </div>
 </section>
@@ -310,18 +323,18 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <!-- 06 CREDIBILITY -->
 <section class="cred" id="partner">
   <div class="ctr">
-    <div class="sl">Warum wir</div>
-    <h2 class="st">Keine leeren Versprechen</h2>
-    <p class="ss">Zwei Agenturen, die seit Jahren substanziell arbeiten. Keine Pitch-Folien — echte Ergebnisse.</p>
+    <div class="sl" data-i18n="cred.sl">Warum wir</div>
+    <h2 class="st" data-i18n="cred.st">Keine leeren Versprechen</h2>
+    <p class="ss" data-i18n="cred.ss">Zwei Agenturen, die seit Jahren substanziell arbeiten.</p>
     <div class="cg">
-      <div class="cs"><div class="nm">30</div><div class="un">Jahre Erfahrung<br>(20 + 10)</div></div>
-      <div class="cs"><div class="nm">2&times;</div><div class="un">Google<br>Partner</div></div>
-      <div class="cs"><div class="nm">2&times;</div><div class="un">HubSpot<br>Partner</div></div>
-      <div class="cs"><div class="nm">DE↔ES</div><div class="un">Muttersprachlich<br>in beiden Märkten</div></div>
+      <div class="cs"><div class="nm">30</div><div class="un" data-i18n="c1.un">Jahre Erfahrung<br>(20 + 10)</div></div>
+      <div class="cs"><div class="nm">2×</div><div class="un" data-i18n="c2.un">Google<br>Partner</div></div>
+      <div class="cs"><div class="nm">2×</div><div class="un" data-i18n="c3.un">HubSpot<br>Partner</div></div>
+      <div class="cs"><div class="nm">DE↔ES</div><div class="un" data-i18n="c4.un">Muttersprachlich<br>in beiden Märkten</div></div>
     </div>
     <div class="fds">
-      <div class="fd"><div class="fav">ST</div><div><h4>Stefan Thomsen</h4><div class="rl">CEO &amp; Founder, THRE3 — Berlin</div><p>10 Jahre Performance Marketing, E-Commerce und B2B in Deutschland. Google Premier Partner. Amazon Advertising Partner. Denkt in Ergebnissen, nicht in Folien.</p></div></div>
-      <div class="fd"><div class="fav">NB</div><div><h4>Nico Buchholz</h4><div class="rl">CEO &amp; Co-Founder, Enfusión — Barcelona</div><p>20 Jahre B2B-Marketing für KMUs in Spanien und Portugal. Deutscher Kopf, spanischer Markt. Spricht beide Sprachen — wörtlich und kulturell.</p></div></div>
+      <div class="fd"><div class="fav">ST</div><div><h4>Stefan Thomsen</h4><div class="rl" data-i18n="st.rl">CEO &amp; Founder, THRE3 — Berlin</div><p data-i18n="st.p">10 Jahre Performance Marketing, E-Commerce und B2B in Deutschland. Google Premier Partner. Denkt in Ergebnissen, nicht in Folien.</p></div></div>
+      <div class="fd"><div class="fav">NB</div><div><h4>Nico Buchholz</h4><div class="rl" data-i18n="nb.rl">CEO &amp; Co-Founder, Enfusión — Barcelona</div><p data-i18n="nb.p">20 Jahre B2B-Marketing für KMUs in Spanien und Portugal. Deutscher Kopf, spanischer Markt.</p></div></div>
     </div>
   </div>
 </section>
@@ -329,50 +342,47 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <!-- 07 SOCIAL PROOF -->
 <section>
   <div class="ctr">
-    <div class="sl">Vertrauen</div>
-    <h2 class="st">Bekannte Marken, echte Ergebnisse</h2>
-    <p class="ss">Auszug aus dem gemeinsamen Kundenportfolio beider Agenturen.</p>
-    <div class="lb">
-      <span>Vandemoortele</span><span>Cargoboard</span><span>Lang Iberia</span>
-      <span>DBV Network</span><span>Ferros Texar</span><span>SEVERIN</span>
-    </div>
+    <div class="sl" data-i18n="proof.sl">Vertrauen</div>
+    <h2 class="st" data-i18n="proof.st">Bekannte Marken, echte Ergebnisse</h2>
+    <p class="ss" data-i18n="proof.ss">Auszug aus dem gemeinsamen Kundenportfolio beider Agenturen.</p>
+    <div class="lb"><span>Vandemoortele</span><span>Cargoboard</span><span>Lang Iberia</span><span>DBV Network</span><span>Ferros Texar</span><span>SEVERIN</span></div>
   </div>
 </section>
 
 <!-- 08 LEAD FORM -->
 <section class="fms" id="kontakt">
   <div class="ctr">
-    <div class="sl" style="color:var(--green)">Kontakt</div>
-    <h2 class="st">Lassen Sie uns sprechen</h2>
-    <p class="ss">30 Minuten, kein Pitch, keine Verpflichtung. Wir hören zu und sagen Ihnen ehrlich, ob wir passen.</p>
+    <div class="sl" style="color:var(--green)" data-i18n="form.sl">Kontakt</div>
+    <h2 class="st" data-i18n="form.st">Lassen Sie uns sprechen</h2>
+    <p class="ss" data-i18n="form.ss">30 Minuten, kein Pitch, keine Verpflichtung.</p>
     <div class="fw">
       <div class="fb2">
-        <h3>Was Sie im Erstgespräch erwartet:</h3>
-        <div class="bi"><div class="bc">&#10003;</div><p><strong>Ehrliche Einschätzung</strong> — ob Ihr Unternehmen bereit für den Markteintritt ist und welche Kanäle Priorität haben.</p></div>
-        <div class="bi"><div class="bc">&#10003;</div><p><strong>Quick Scan</strong> Ihrer aktuellen Sichtbarkeit im Zielmarkt: Google, KI-Antwortmaschinen, LinkedIn.</p></div>
-        <div class="bi"><div class="bc">&#10003;</div><p><strong>Konkrete nächste Schritte</strong> — keine generischen Empfehlungen, sondern ein Fahrplan, den Sie auch ohne uns umsetzen könnten.</p></div>
-        <div class="bi"><div class="bc">&#10003;</div><p><strong>Kein Verkaufsgespräch.</strong> Wenn wir nicht die Richtigen sind, sagen wir es Ihnen.</p></div>
+        <h3 data-i18n="ben.h3">Was Sie im Erstgespräch erwartet:</h3>
+        <div class="bi"><div class="bc">&#10003;</div><p data-i18n-html="ben1"><strong>Ehrliche Einschätzung</strong> — ob Ihr Unternehmen bereit ist und welche Kanäle Priorität haben.</p></div>
+        <div class="bi"><div class="bc">&#10003;</div><p data-i18n-html="ben2"><strong>Quick Scan</strong> Ihrer Sichtbarkeit im Zielmarkt: Google, KI-Antwortmaschinen, LinkedIn.</p></div>
+        <div class="bi"><div class="bc">&#10003;</div><p data-i18n-html="ben3"><strong>Konkrete nächste Schritte</strong> — ein Fahrplan, den Sie auch ohne uns umsetzen könnten.</p></div>
+        <div class="bi"><div class="bc">&#10003;</div><p data-i18n-html="ben4"><strong>Kein Verkaufsgespräch.</strong> Wenn wir nicht passen, sagen wir es.</p></div>
       </div>
       <form class="lf" action="https://formspree.io/f/YOUR_ID" method="POST">
-        <h3>Erstgespräch vereinbaren</h3>
-        <p class="fsb">Antwort innerhalb von 48 Stunden.</p>
+        <h3 data-i18n="frm.h3">Erstgespräch vereinbaren</h3>
+        <p class="fsb" data-i18n="frm.sub">Antwort innerhalb von 48 Stunden.</p>
         <div class="fr">
-          <div class="fg"><label>Name *</label><input type="text" name="name" required placeholder="Max Mustermann"></div>
-          <div class="fg"><label>Unternehmen *</label><input type="text" name="company" required placeholder="Musterfirma GmbH"></div>
+          <div class="fg"><label data-i18n="lbl.name">Name *</label><input type="text" name="name" required data-i18n-ph="ph.name" placeholder="Max Mustermann"></div>
+          <div class="fg"><label data-i18n="lbl.company">Unternehmen *</label><input type="text" name="company" required data-i18n-ph="ph.company" placeholder="Musterfirma GmbH"></div>
         </div>
-        <div class="fg"><label>E-Mail *</label><input type="email" name="email" required placeholder="max@musterfirma.de"></div>
+        <div class="fg"><label data-i18n="lbl.email">E-Mail *</label><input type="email" name="email" required data-i18n-ph="ph.email" placeholder="max@musterfirma.de"></div>
         <div class="fg">
-          <label>Welcher Markt interessiert Sie?</label>
-          <select name="market">
-            <option value="">Bitte wählen</option>
-            <option value="de-es">Deutschland → Spanien / LATAM</option>
-            <option value="es-de">Spanien → Deutschland / DACH</option>
-            <option value="both">Beide Richtungen</option>
+          <label data-i18n="lbl.market">Welcher Markt interessiert Sie?</label>
+          <select name="market" id="mkt-select">
+            <option value="" data-i18n-opt="opt.0">Bitte wählen</option>
+            <option value="de-es" data-i18n-opt="opt.1">Deutschland → Spanien / LATAM</option>
+            <option value="es-de" data-i18n-opt="opt.2">Spanien → Deutschland / DACH</option>
+            <option value="both" data-i18n-opt="opt.3">Beide Richtungen</option>
           </select>
         </div>
-        <div class="fg"><label>Nachricht (optional)</label><textarea name="message" placeholder="Erzählen Sie uns kurz, was Sie vorhaben..."></textarea></div>
-        <button type="submit" class="fsm">Erstgespräch vereinbaren &rarr;</button>
-        <p class="fn">Kein Spam. Ihre Daten werden vertraulich behandelt.</p>
+        <div class="fg"><label data-i18n="lbl.msg">Nachricht (optional)</label><textarea name="message" data-i18n-ph="ph.msg" placeholder="Erzählen Sie uns kurz, was Sie vorhaben..."></textarea></div>
+        <button type="submit" class="fsm" data-i18n="btn.submit">Erstgespräch vereinbaren →</button>
+        <p class="fn" data-i18n="frm.note">Kein Spam. Ihre Daten werden vertraulich behandelt.</p>
       </form>
     </div>
   </div>
@@ -382,18 +392,12 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <section class="mag">
   <div class="ctr">
     <div class="mi">
-      <div class="mv">
-        <div class="pdi">&#128196;</div>
-        <div class="pdt">Checkliste<br>Markteintritt<br>Spanien<br>2026</div>
-      </div>
+      <div class="mv"><div class="pdi">&#128196;</div><div class="pdt" data-i18n="mag.pdt">Checkliste<br>Markteintritt<br>Spanien 2026</div></div>
       <div class="mc">
-        <div class="sl">Kostenloser Download</div>
-        <h3>Noch nicht bereit für ein Gespräch?</h3>
-        <p>Kein Problem. Laden Sie unsere kostenlose Checkliste herunter: 15 Punkte, die Sie klären müssen, bevor Sie in den spanischen Markt eintreten. Praxisorientiert, ohne Marketingfloskeln.</p>
-        <div class="mf">
-          <input type="email" placeholder="Ihre E-Mail-Adresse" aria-label="E-Mail für Download">
-          <button type="button">Herunterladen</button>
-        </div>
+        <div class="sl" data-i18n="mag.sl">Kostenloser Download</div>
+        <h3 data-i18n="mag.h3">Noch nicht bereit für ein Gespräch?</h3>
+        <p data-i18n="mag.p">Laden Sie unsere kostenlose Checkliste herunter: 15 Punkte für Ihren Markteintritt in Spanien.</p>
+        <div class="mf"><input type="email" data-i18n-ph="mag.ph" placeholder="Ihre E-Mail-Adresse"><button type="button" data-i18n="mag.btn">Herunterladen</button></div>
       </div>
     </div>
   </div>
@@ -403,33 +407,295 @@ footer{background:var(--blk);color:rgba(255,255,255,.6);padding:60px 0 40px}
 <footer>
   <div class="ctr">
     <div class="fgr">
-      <div>
-        <div class="fbr">THRE3 <em>&times;</em> Enfusión</div>
-        <p class="fde">Cross-Border B2B Marketing zwischen Deutschland und Spanien. Gedacht von Strategen, umgesetzt von Romantikern.</p>
-      </div>
-      <div class="fc">
-        <h4>THRE3 — Berlin</h4>
-        <p>THRE3 GmbH<br>Berlin, Deutschland<br><br><a href="https://www.thre3.de" target="_blank" rel="noopener">www.thre3.de</a><br><a href="https://www.linkedin.com/company/thre3" target="_blank" rel="noopener">LinkedIn</a></p>
-      </div>
-      <div class="fc">
-        <h4>Enfusión — Barcelona</h4>
-        <p>Enfusión Consultoría &amp; Comunicación SL<br>Barcelona, Spanien<br><br><a href="https://www.enfusion.es" target="_blank" rel="noopener">www.enfusion.es</a><br><a href="https://www.linkedin.com/company/enfusion-consultoria" target="_blank" rel="noopener">LinkedIn</a></p>
-      </div>
+      <div><div class="fbr">THRE3 <em>&times;</em> Enfusión</div><p class="fde" data-i18n="ft.desc">Cross-Border B2B Marketing zwischen Deutschland und Spanien. Gedacht von Strategen, umgesetzt von Romantikern.</p></div>
+      <div class="fc"><h4>THRE3 — Berlin</h4><p>THRE3 GmbH<br>Berlin, Deutschland<br><br><a href="https://www.thre3.de" target="_blank" rel="noopener">www.thre3.de</a><br><a href="https://www.linkedin.com/company/thre3" target="_blank" rel="noopener">LinkedIn</a></p></div>
+      <div class="fc"><h4>Enfusión — Barcelona</h4><p>Enfusión Consultoría &amp; Comunicación SL<br>Barcelona, Spanien<br><br><a href="https://www.enfusion.es" target="_blank" rel="noopener">www.enfusion.es</a><br><a href="https://www.linkedin.com/company/enfusion-consultoria" target="_blank" rel="noopener">LinkedIn</a></p></div>
     </div>
-    <div class="fbt">
-      <span>&copy; 2026 THRE3 &times; Enfusión</span>
-      <div><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
-    </div>
+    <div class="fbt"><span data-i18n="ft.copy">© 2026 THRE3 × Enfusión</span><div><a href="#" data-i18n="ft.imp">Impressum</a><a href="#" data-i18n="ft.priv">Datenschutz</a></div></div>
   </div>
 </footer>
 
-<!-- STICKY NAV SCRIPT -->
 <script>
+// ── TRANSLATIONS ─────────────────────────────────────────────────────────────
+const T = {
+de:{
+  'nav.cta':'Erstgespräch vereinbaren','hero.badge':'Cross-Border B2B Marketing',
+  'hero.h1':'Ihr Markt wartet.<br>Wir bringen <em>Sie hin.</em>',
+  'hero.sub':'Zwei Agenturen. 30 Jahre Erfahrung. Ein System für Ihren Markteintritt in Spanien, Portugal und LATAM — oder in den DACH-Raum. Keine Experimente, sondern eine bewährte Brücke.',
+  'hero.cta1':'Kostenloses Erstgespräch →','hero.cta2':'So funktioniert es',
+  'hero.loc1':'Berlin, Deutschland','hero.loc2':'Barcelona, Spanien',
+  'pain.sl':'Das Problem','pain.st':'Kennen Sie das?',
+  'pain.ss':'Internationaler Markteintritt klingt einfach. Die Realität sieht anders aus.',
+  'p1.h3':'Sie übersetzen Ihre Website — aber niemand findet Sie',
+  'p1.p':'Eine übersetzte Website ist kein SEO. Lokale Suchbegriffe, kulturelle Nuancen und landesspezifische Plattformen entscheiden, ob Sie gefunden werden.',
+  'p2.h3':'Ihre Leads im Zielmarkt konvertieren nicht',
+  'p2.p':'Was in Deutschland funktioniert, funktioniert nicht automatisch in Spanien. Tonalität, Verhandlungskultur und Entscheidungsprozesse unterscheiden sich fundamental.',
+  'p3.h3':'Sie brauchen lokale Expertise, nicht noch eine Agentur',
+  'p3.p':'Freiberufler ohne Struktur? Große Agentur ohne persönlichen Kontakt? Sie brauchen einen Partner, der den Markt kennt und Ihr Geschäft versteht.',
+  'sol.sl':'Die Lösung','sol.st':'Ein System, zwei Märkte',
+  'sol.ss':'Kein Subcontracting, sondern echte Partnerschaft. Ein Ansprechpartner, der Ihre Sprache spricht.',
+  'de.dir':'Deutschland → Spanien','de.h3':'Sie wollen in den spanischen Markt?',
+  'de.p':'THRE3 führt Ihre Kundenbeziehung. Enfusión liefert alles vor Ort.',
+  'de.l1':'SEO & AEO für den spanischen Markt','de.l2':'Google Ads auf Spanisch, lokal optimiert',
+  'de.l3':'LinkedIn Outreach mit lokalen Profilen','de.l4':'Cold Emailing B2B auf Spanisch',
+  'de.l5':'Landing Page lokalisiert','de.l6':'HubSpot Dual-Market Setup',
+  'es.dir':'Spanien → Deutschland','es.h3':'¿Quiere entrar en el mercado alemán?',
+  'es.p':'Enfusión lleva la relación. THRE3 ejecuta todo en Alemania.',
+  'es.l1':'SEO & SEA für den DACH-Raum','es.l2':'Google Ads auf Deutsch, lokal optimiert',
+  'es.l3':'LinkedIn Outreach im DACH-Netzwerk','es.l4':'Content-Strategie auf Deutsch',
+  'es.l5':'Landing Page kulturell adaptiert','es.l6':'HubSpot deutsches Pipeline-Setup',
+  'proc.sl':'Der Prozess','proc.st':'So funktioniert der Markteintritt',
+  'proc.ss':'Ein strukturiertes 6-Monats-Programm mit klaren Phasen und messbaren Ergebnissen.',
+  'pr1.slb':'Monat 1–2','pr1.h3':'Strategie & Setup',
+  'pr1.p':'Marktanalyse, kulturelles Buyer-Persona-Mapping, Website-Lokalisierung, HubSpot bi-nationales Setup.',
+  'pr2.slb':'Monat 3–5','pr2.h3':'Aktivierung',
+  'pr2.p':'Google Ads live, SEO/AEO-Aufbau, LinkedIn Outreach, Cold Emailing, erste Leads.',
+  'pr3.slb':'Monat 6','pr3.h3':'Bewertung',
+  'pr3.p':'Was funktioniert? Welche Kanäle lohnen sich? Erneuerung, Anpassung oder Handover.',
+  'svc.sl':'Leistungen','svc.st':'Was Sie bekommen','svc.ss':'Alle Leistungen, die Ihr Markteintritt braucht.',
+  's1.h4':'SEO / AEO / GEO','s1.p':'Sichtbarkeit in Suchmaschinen und KI-Antwortmaschinen.',
+  's2.h4':'Google & Meta Ads','s2.p':'Kampagnen lokal optimiert mit kulturellem Verständnis.',
+  's3.h4':'LinkedIn Outreach','s3.p':'Prospecting mit lokalen Profilen und Sales Navigator.',
+  's4.h4':'Cold Emailing B2B','s4.p':'Infrastruktur, Listenerstellung und Deliverability-Monitoring.',
+  's5.h4':'Landing Pages','s5.p':'Nicht übersetzt, sondern kulturell adaptiert. CRO-optimiert.',
+  's6.h4':'HubSpot Dual-Market','s6.p':'Ein CRM, zwei Pipelines, zwei Sprachen.',
+  's7.h4':'Content-Strategie','s7.p':'Blog, Social, Thought Leadership in der Sprache des Zielmarkts.',
+  's8.h4':'KI-Sichtbarkeitsanalyse','s8.p':'AI Visibility Score: ChatGPT, Perplexity, Google AI.',
+  'tag.both':'Beide Agenturen',
+  'cred.sl':'Warum wir','cred.st':'Keine leeren Versprechen',
+  'cred.ss':'Zwei Agenturen, die seit Jahren substanziell arbeiten.',
+  'c1.un':'Jahre Erfahrung\n(20 + 10)','c2.un':'Google\nPartner','c3.un':'HubSpot\nPartner','c4.un':'Muttersprachlich\nin beiden Märkten',
+  'st.rl':'CEO & Founder, THRE3 — Berlin',
+  'st.p':'10 Jahre Performance Marketing, E-Commerce und B2B in Deutschland. Google Premier Partner. Denkt in Ergebnissen, nicht in Folien.',
+  'nb.rl':'CEO & Co-Founder, Enfusión — Barcelona',
+  'nb.p':'20 Jahre B2B-Marketing für KMUs in Spanien und Portugal. Deutscher Kopf, spanischer Markt.',
+  'proof.sl':'Vertrauen','proof.st':'Bekannte Marken, echte Ergebnisse',
+  'proof.ss':'Auszug aus dem gemeinsamen Kundenportfolio beider Agenturen.',
+  'form.sl':'Kontakt','form.st':'Lassen Sie uns sprechen',
+  'form.ss':'30 Minuten, kein Pitch, keine Verpflichtung.',
+  'ben.h3':'Was Sie im Erstgespräch erwartet:',
+  'ben1':'<strong>Ehrliche Einschätzung</strong> — ob Ihr Unternehmen bereit ist und welche Kanäle Priorität haben.',
+  'ben2':'<strong>Quick Scan</strong> Ihrer Sichtbarkeit im Zielmarkt: Google, KI-Antwortmaschinen, LinkedIn.',
+  'ben3':'<strong>Konkrete nächste Schritte</strong> — ein Fahrplan, den Sie auch ohne uns umsetzen könnten.',
+  'ben4':'<strong>Kein Verkaufsgespräch.</strong> Wenn wir nicht passen, sagen wir es.',
+  'frm.h3':'Erstgespräch vereinbaren','frm.sub':'Antwort innerhalb von 48 Stunden.',
+  'lbl.name':'Name *','lbl.company':'Unternehmen *','lbl.email':'E-Mail *',
+  'lbl.market':'Welcher Markt interessiert Sie?','lbl.msg':'Nachricht (optional)',
+  'ph.name':'Max Mustermann','ph.company':'Musterfirma GmbH','ph.email':'max@musterfirma.de',
+  'ph.msg':'Erzählen Sie uns kurz, was Sie vorhaben...',
+  'opt.0':'Bitte wählen','opt.1':'Deutschland → Spanien / LATAM',
+  'opt.2':'Spanien → Deutschland / DACH','opt.3':'Beide Richtungen',
+  'btn.submit':'Erstgespräch vereinbaren →',
+  'frm.note':'Kein Spam. Ihre Daten werden vertraulich behandelt.',
+  'mag.sl':'Kostenloser Download','mag.h3':'Noch nicht bereit für ein Gespräch?',
+  'mag.p':'Laden Sie unsere kostenlose Checkliste herunter: 15 Punkte für Ihren Markteintritt in Spanien.',
+  'mag.ph':'Ihre E-Mail-Adresse','mag.btn':'Herunterladen',
+  'mag.pdt':'Checkliste<br>Markteintritt<br>Spanien 2026',
+  'ft.desc':'Cross-Border B2B Marketing zwischen Deutschland und Spanien. Gedacht von Strategen, umgesetzt von Romantikern.',
+  'ft.copy':'© 2026 THRE3 × Enfusión','ft.imp':'Impressum','ft.priv':'Datenschutz'
+},
+es:{
+  'nav.cta':'Solicitar primera reunión','hero.badge':'Marketing B2B Cross-Border',
+  'hero.h1':'Su mercado espera.<br>Nosotros <em>le llevamos.</em>',
+  'hero.sub':'Dos agencias. 30 años de experiencia. Un sistema para su entrada al mercado español, Portugal y LATAM — o al espacio DACH.',
+  'hero.cta1':'Primera reunión gratuita →','hero.cta2':'Cómo funciona',
+  'hero.loc1':'Berlín, Alemania','hero.loc2':'Barcelona, España',
+  'pain.sl':'El problema','pain.st':'¿Le suena familiar?',
+  'pain.ss':'La entrada a un nuevo mercado parece sencilla. La realidad es diferente.',
+  'p1.h3':'Traduce su web — pero nadie le encuentra',
+  'p1.p':'Una web traducida no es SEO. Las palabras clave locales, los matices culturales y las plataformas de cada país determinan si le encuentran o si es invisible.',
+  'p2.h3':'Sus leads en el mercado objetivo no convierten',
+  'p2.p':'Lo que funciona en España no funciona automáticamente en Alemania. El tono, la cultura de negociación y los procesos de decisión son fundamentalmente diferentes.',
+  'p3.h3':'Necesita experiencia local, no otra agencia más',
+  'p3.p':'¿Freelancer sin estructura? ¿Gran agencia sin contacto personal? Necesita un partner que conozca el mercado, hable su idioma y entienda su negocio.',
+  'sol.sl':'La solución','sol.st':'Un sistema, dos mercados',
+  'sol.ss':'No es subcontratación, es una asociación real. Un interlocutor único que habla su idioma.',
+  'de.dir':'Alemania → España','de.h3':'¿Quiere entrar en el mercado español?',
+  'de.p':'THRE3 gestiona la relación. Enfusión lo ejecuta todo sobre el terreno.',
+  'de.l1':'SEO y AEO para el mercado español','de.l2':'Google Ads en español, optimizado localmente',
+  'de.l3':'LinkedIn Outreach con perfiles locales','de.l4':'Cold Emailing B2B en español',
+  'de.l5':'Landing page localizada','de.l6':'HubSpot Dual-Market Setup',
+  'es.dir':'España → Alemania','es.h3':'¿Quiere entrar en el mercado alemán?',
+  'es.p':'Enfusión lleva la relación. THRE3 ejecuta todo en Alemania.',
+  'es.l1':'SEO y SEA para el espacio DACH','es.l2':'Google Ads en alemán, optimizado localmente',
+  'es.l3':'LinkedIn Outreach en la red DACH','es.l4':'Estrategia de contenidos en alemán',
+  'es.l5':'Landing page adaptada culturalmente','es.l6':'HubSpot pipeline setup alemán',
+  'proc.sl':'El proceso','proc.st':'Así funciona la entrada al mercado',
+  'proc.ss':'Un programa estructurado de 6 meses con fases claras y resultados medibles.',
+  'pr1.slb':'Mes 1–2','pr1.h3':'Estrategia y configuración',
+  'pr1.p':'Análisis de mercado, buyer persona cultural, localización web, configuración HubSpot bi-nacional.',
+  'pr2.slb':'Mes 3–5','pr2.h3':'Activación',
+  'pr2.p':'Google Ads activo, SEO/AEO, LinkedIn Outreach, Cold Emailing, primeros leads.',
+  'pr3.slb':'Mes 6','pr3.h3':'Evaluación',
+  'pr3.p':'¿Qué funciona? ¿Qué canales merecen la pena? Renovación, ajuste o traspaso estructurado.',
+  'svc.sl':'Servicios','svc.st':'Qué recibe','svc.ss':'Todo lo que necesita su entrada al mercado.',
+  's1.h4':'SEO / AEO / GEO','s1.p':'Visibilidad en buscadores y motores de respuesta IA.',
+  's2.h4':'Google y Meta Ads','s2.p':'Campañas optimizadas localmente con conocimiento cultural.',
+  's3.h4':'LinkedIn Outreach','s3.p':'Prospecting con perfiles locales y Sales Navigator.',
+  's4.h4':'Cold Emailing B2B','s4.p':'Infraestructura, listas, secuencias y monitoreo de entregabilidad.',
+  's5.h4':'Landing Pages','s5.p':'No traducidas, sino adaptadas culturalmente. Optimizadas para conversión.',
+  's6.h4':'HubSpot Dual-Market','s6.p':'Un CRM, dos pipelines, dos idiomas.',
+  's7.h4':'Estrategia de contenidos','s7.p':'Blog, redes, thought leadership en el idioma del mercado objetivo.',
+  's8.h4':'Análisis de visibilidad IA','s8.p':'AI Visibility Score mensual: ¿aparece en ChatGPT y Perplexity?',
+  'tag.both':'Ambas agencias',
+  'cred.sl':'Por qué nosotros','cred.st':'Sin promesas vacías',
+  'cred.ss':'Dos agencias que trabajan con sustancia desde hace años.',
+  'c1.un':'Años de experiencia\n(20 + 10)','c2.un':'Google\nPartner','c3.un':'HubSpot\nPartner','c4.un':'Nativos en\nambos mercados',
+  'st.rl':'CEO y Founder, THRE3 — Berlín',
+  'st.p':'10 años de Performance Marketing, E-Commerce y B2B en Alemania. Google Premier Partner. Piensa en resultados, no en presentaciones.',
+  'nb.rl':'CEO y Co-Founder, Enfusión — Barcelona',
+  'nb.p':'20 años de marketing B2B para pymes en España y Portugal. Cabeza alemana, mercado español.',
+  'proof.sl':'Confianza','proof.st':'Marcas reconocidas, resultados reales',
+  'proof.ss':'Muestra del portfolio conjunto de ambas agencias.',
+  'form.sl':'Contacto','form.st':'Hablemos',
+  'form.ss':'30 minutos, sin pitch, sin compromiso.',
+  'ben.h3':'Qué puede esperar:',
+  'ben1':'<strong>Evaluación honesta</strong> — si su empresa está lista para la entrada al mercado y qué canales son prioritarios.',
+  'ben2':'<strong>Quick Scan</strong> de su visibilidad actual en el mercado objetivo: Google, IA, LinkedIn.',
+  'ben3':'<strong>Próximos pasos concretos</strong> — un plan de acción que podría ejecutar incluso sin nosotros.',
+  'ben4':'<strong>Sin reunión de ventas.</strong> Si no encajamos, se lo decimos.',
+  'frm.h3':'Solicitar primera reunión','frm.sub':'Respuesta en 48 horas.',
+  'lbl.name':'Nombre *','lbl.company':'Empresa *','lbl.email':'E-mail *',
+  'lbl.market':'¿Qué mercado le interesa?','lbl.msg':'Mensaje (opcional)',
+  'ph.name':'Juan García','ph.company':'Mi Empresa SL','ph.email':'juan@miempresa.es',
+  'ph.msg':'Cuéntenos brevemente qué tiene en mente...',
+  'opt.0':'Por favor, elija','opt.1':'Alemania → España / LATAM',
+  'opt.2':'España → Alemania / DACH','opt.3':'Ambas direcciones',
+  'btn.submit':'Solicitar primera reunión →',
+  'frm.note':'Sin spam. Sus datos serán tratados con confidencialidad.',
+  'mag.sl':'Descarga gratuita','mag.h3':'¿Todavía no está listo para hablar?',
+  'mag.p':'Descargue nuestra checklist gratuita: 15 puntos que debe aclarar antes de entrar en el mercado español.',
+  'mag.ph':'Su dirección de e-mail','mag.btn':'Descargar',
+  'mag.pdt':'Checklist<br>Entrada al<br>mercado<br>español 2026',
+  'ft.desc':'Marketing B2B Cross-Border entre Alemania y España. Pensado por estrategas, desarrollado por románticos.',
+  'ft.copy':'© 2026 THRE3 × Enfusión','ft.imp':'Aviso legal','ft.priv':'Privacidad'
+},
+en:{
+  'nav.cta':'Book a free call','hero.badge':'Cross-Border B2B Marketing',
+  'hero.h1':'Your market is waiting.<br>We\'ll <em>get you there.</em>',
+  'hero.sub':'Two agencies. 30 years of experience. One system for your market entry into Spain, Portugal and LATAM — or into the DACH region.',
+  'hero.cta1':'Book a free call →','hero.cta2':'How it works',
+  'hero.loc1':'Berlin, Germany','hero.loc2':'Barcelona, Spain',
+  'pain.sl':'The Problem','pain.st':'Sound familiar?',
+  'pain.ss':'International market entry sounds simple. The reality is different.',
+  'p1.h3':'You translate your website — but nobody finds you',
+  'p1.p':'A translated website is not SEO. Local search terms, cultural nuances and country-specific platforms decide whether you get found or stay invisible.',
+  'p2.h3':'Your leads in the target market don\'t convert',
+  'p2.p':'What works in Germany doesn\'t automatically work in Spain. Tone, negotiation culture and decision-making processes differ fundamentally.',
+  'p3.h3':'You need local expertise, not another agency',
+  'p3.p':'Freelancers without structure? Big agency without personal contact? You need a partner who knows the market and understands your business.',
+  'sol.sl':'The Solution','sol.st':'One system, two markets',
+  'sol.ss':'Not subcontracting, but a genuine partnership. One point of contact who speaks your language.',
+  'de.dir':'Germany → Spain','de.h3':'Want to enter the Spanish market?',
+  'de.p':'THRE3 leads your client relationship. Enfusión delivers everything on the ground.',
+  'de.l1':'SEO & AEO for the Spanish market','de.l2':'Google Ads in Spanish, locally optimised',
+  'de.l3':'LinkedIn Outreach with local profiles','de.l4':'B2B Cold Emailing in Spanish',
+  'de.l5':'Landing page localised','de.l6':'HubSpot Dual-Market Setup',
+  'es.dir':'Spain → Germany','es.h3':'Want to enter the German market?',
+  'es.p':'Enfusión leads the relationship. THRE3 executes everything in Germany.',
+  'es.l1':'SEO & SEA for the DACH region','es.l2':'Google Ads in German, locally optimised',
+  'es.l3':'LinkedIn Outreach in the DACH network','es.l4':'Content strategy in German',
+  'es.l5':'Landing page culturally adapted','es.l6':'HubSpot German pipeline setup',
+  'proc.sl':'The Process','proc.st':'How market entry works',
+  'proc.ss':'A structured 6-month programme with clear phases and measurable results.',
+  'pr1.slb':'Month 1–2','pr1.h3':'Strategy & Setup',
+  'pr1.p':'Market analysis, cultural buyer persona mapping, website localisation, HubSpot bi-national setup.',
+  'pr2.slb':'Month 3–5','pr2.h3':'Activation',
+  'pr2.p':'Google Ads live, SEO/AEO build, LinkedIn Outreach, Cold Emailing, first leads.',
+  'pr3.slb':'Month 6','pr3.h3':'Evaluation',
+  'pr3.p':'What works? Which channels are worth it? Renewal, adjustment or structured handover.',
+  'svc.sl':'Services','svc.st':'What you get','svc.ss':'Everything your market entry needs.',
+  's1.h4':'SEO / AEO / GEO','s1.p':'Visibility in search engines and AI answer engines.',
+  's2.h4':'Google & Meta Ads','s2.p':'Campaigns locally optimised with cultural understanding.',
+  's3.h4':'LinkedIn Outreach','s3.p':'Prospecting with local profiles and Sales Navigator.',
+  's4.h4':'B2B Cold Emailing','s4.p':'Infrastructure, list building, sequences and deliverability monitoring.',
+  's5.h4':'Landing Pages','s5.p':'Not translated, but culturally adapted. Mobile-first, CRO-optimised.',
+  's6.h4':'HubSpot Dual-Market','s6.p':'One CRM, two pipelines, two languages.',
+  's7.h4':'Content Strategy','s7.p':'Blog, social media, thought leadership in the target market\'s language.',
+  's8.h4':'AI Visibility Analysis','s8.p':'Monthly AI Visibility Score: do you appear in ChatGPT and Perplexity?',
+  'tag.both':'Both agencies',
+  'cred.sl':'Why us','cred.st':'No empty promises',
+  'cred.ss':'Two agencies with years of solid work behind them.',
+  'c1.un':'Years of experience\n(20 + 10)','c2.un':'Google\nPartner','c3.un':'HubSpot\nPartner','c4.un':'Native in\nboth markets',
+  'st.rl':'CEO & Founder, THRE3 — Berlin',
+  'st.p':'10 years of performance marketing, e-commerce and B2B in Germany. Google Premier Partner. Thinks in results, not slide decks.',
+  'nb.rl':'CEO & Co-Founder, Enfusión — Barcelona',
+  'nb.p':'20 years of B2B marketing for SMEs in Spain and Portugal. German mind, Spanish market.',
+  'proof.sl':'Trust','proof.st':'Recognised brands, real results',
+  'proof.ss':'A selection from the combined client portfolio of both agencies.',
+  'form.sl':'Contact','form.st':'Let\'s talk',
+  'form.ss':'30 minutes, no pitch, no obligation.',
+  'ben.h3':'What to expect:',
+  'ben1':'<strong>Honest assessment</strong> — whether your company is ready for market entry and which channels to prioritise.',
+  'ben2':'<strong>Quick scan</strong> of your current visibility in the target market: Google, AI answer engines, LinkedIn.',
+  'ben3':'<strong>Concrete next steps</strong> — a roadmap you could execute even without us.',
+  'ben4':'<strong>No sales pitch.</strong> If we\'re not the right fit, we\'ll tell you.',
+  'frm.h3':'Book a free call','frm.sub':'Reply within 48 hours.',
+  'lbl.name':'Name *','lbl.company':'Company *','lbl.email':'Email *',
+  'lbl.market':'Which market interests you?','lbl.msg':'Message (optional)',
+  'ph.name':'John Smith','ph.company':'My Company Ltd','ph.email':'john@mycompany.com',
+  'ph.msg':'Tell us briefly what you have in mind...',
+  'opt.0':'Please select','opt.1':'Germany → Spain / LATAM',
+  'opt.2':'Spain → Germany / DACH','opt.3':'Both directions',
+  'btn.submit':'Book a free call →',
+  'frm.note':'No spam. Your data will be treated confidentially.',
+  'mag.sl':'Free Download','mag.h3':'Not ready for a call yet?',
+  'mag.p':'Download our free checklist: 15 points to clarify before entering the Spanish market.',
+  'mag.ph':'Your email address','mag.btn':'Download',
+  'mag.pdt':'Checklist<br>Market Entry<br>Spain 2026',
+  'ft.desc':'Cross-Border B2B Marketing between Germany and Spain. Conceived by strategists, executed by romantics.',
+  'ft.copy':'© 2026 THRE3 × Enfusión','ft.imp':'Legal Notice','ft.priv':'Privacy Policy'
+}
+};
+
+// ── I18N ENGINE ──────────────────────────────────────────────────────────────
+function setLang(lang) {
+  const tr = T[lang];
+  if (!tr) return;
+  // text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (tr[k] !== undefined) el.textContent = tr[k];
+  });
+  // html nodes (for em, strong etc)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.getAttribute('data-i18n-html');
+    if (tr[k] !== undefined) el.innerHTML = tr[k];
+  });
+  // placeholders
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.getAttribute('data-i18n-ph');
+    if (tr[k] !== undefined) el.placeholder = tr[k];
+  });
+  // select options
+  document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+    const k = el.getAttribute('data-i18n-opt');
+    if (tr[k] !== undefined) el.textContent = tr[k];
+  });
+  // lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  // html lang attr
+  document.documentElement.lang = lang;
+  // save preference
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+
+// ── STICKY NAV ───────────────────────────────────────────────────────────────
 !function(){
-  var n=document.getElementById("sn"),h=document.querySelector(".hero");
-  function c(){n.classList.toggle("v",scrollY>h.offsetHeight*.6)}
-  addEventListener("scroll",c,{passive:!0});c()
-}()
+  var n=document.getElementById('sn'), h=document.querySelector('.hero');
+  function c(){n.classList.toggle('v', scrollY > h.offsetHeight * 0.6)}
+  addEventListener('scroll', c, {passive:true}); c();
+}();
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+(function(){
+  let lang = 'de';
+  try { lang = localStorage.getItem('lang') || 'de'; } catch(e) {}
+  if (!T[lang]) lang = 'de';
+  setLang(lang);
+})();
 </script>
 </body>
 </html>
